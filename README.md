@@ -8,9 +8,9 @@
 
 ```
 owner:
-    hid: 000
-    name: Gregor von Laszewski
-    url: https://github.com/bigdata-i523/sample-hid000
+    hid: 338
+    name: Sriramulu, Anand
+    url: https://github.com/bigdata-i523/hid338
 ```
 
 # Paper 1
