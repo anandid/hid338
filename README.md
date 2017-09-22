@@ -18,17 +18,15 @@ owner:
 ```
 paper1:
    author: 
-   - Gregor von Laszewski
-   - Fugang Wang
+   - Anand Sriramulu
    hid:
-   - 000
-   - 001
-   title: This is my paper about xyz
-   abstract: This paper showcases this and that and the other
+   - 338   
+   title: Docker in support of Big Data Applications and Analytics
+   abstract: Processing power of docker with big data use cases
    url: https://github.com/bigdata-i523/sample-hid000/paper1/paper1.pdf
-   type: latex
+   type: word
    
-   status: in progress
+   status: in progress. Understanding Docker and Micro Services for running big data
  ```
    
 # Paper 2
@@ -36,11 +34,11 @@ paper1:
 ```
 paper2:
    author: 
-   - Gregor von Laszewski
+   - Anand Sriramulu
    hid:
-   - 000
-   title: This is my paper about the other abc
-   abstract: This paper showcases tis and that and the other in regards to abc
+   - 338
+   title: Still not decided as I am trying to do a project on the same topic
+   abstract: Still not decided
    url: https://github.com/bigdata-i523/sample-hid000/paper2/paper2.pdf   
    type: word
    status: in progress
