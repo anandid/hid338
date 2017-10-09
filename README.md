@@ -25,7 +25,7 @@ paper1:
    abstract: Processing power of docker with big data use cases
    url: https://github.com/bigdata-i523/sample-hid000/paper1/paper1.pdf
    type: word
-   status: in progress. Understanding Docker and Micro Services for running big data
+   status: 100% completed
    chapter: Technology
 ```
    
