@@ -24,7 +24,7 @@ paper1:
    title: Docker in support of Big Data Applications and Analytics
    abstract: Processing power of docker with big data use cases
    url: https://github.com/bigdata-i523/sample-hid000/paper1/paper1.pdf
-   type: word
+   type: tex
    status: 100% completed
    chapter: Technology
 ```
@@ -40,7 +40,7 @@ paper2:
    title: Still not decided as I am trying to do a project on the same topic
    abstract: Still not decided
    url: https://github.com/bigdata-i523/sample-hid000/paper2/paper2.pdf   
-   type: word
+   type: tex
    status: in progress
 ```
 
