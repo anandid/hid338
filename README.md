@@ -24,7 +24,7 @@ paper1:
    title: Docker in support of Big Data Applications and Analytics
    abstract: Processing power of docker with big data use cases
    url: https://github.com/bigdata-i523/hid338/paper1/report.pdf
-   type: tex
+   type: Latex
    status: 100% completed
    chapter: Technology
 ```
