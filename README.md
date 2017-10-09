@@ -25,7 +25,7 @@ paper1:
    abstract: Processing power of docker with big data use cases
    url: https://github.com/bigdata-i523/hid338/paper1/report.pdf
    type: Latex
-   status: 100% completed
+   status: 100%
    chapter: Technology
 ```
    
