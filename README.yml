@@ -16,12 +16,12 @@ paper1:
     url: https://github.com/bigdata-i523/hid338/paper1/report.pdf
 paper2:
     review: Nov 6 2017
-    abstract: This paper showcases tis and that and the other
+    abstract: Comparing Kubernetes and Docker Swarm Orchestrations, Discuss on the advantages of the Singularity Containers over the others
     author:
-        - Gregor von Laszewski
+        - Anand Sriramulu
     hid:
         - 338
     status: in progress
-    title: Benchmarking a BigData Docker deployment
+    title: A comparative study of Kubernetes and Docker Swarm and Advantages of Singularity Container to HPC World
     type: latex
-    url: https://github.com/bigdata-i523/sample-pid000/project/report.pdf
+    url: https://github.com/bigdata-i523/hid338/paper2/report.pdf
