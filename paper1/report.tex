@@ -1,9 +1,18 @@
 \documentclass[sigconf]{acmart}
 
-\input{format/i523}
+\usepackage{hyperref}
+
+\usepackage{endfloat}
+\renewcommand{\efloatseparator}{\mbox{}} % no new page between figures
+
+\usepackage{booktabs} % For formal tables
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
 
 \begin{document}
-	\title {Docker in support of Big Data Applications and Analytics}
+	\title {Docker in Support of Big Data Applications and Analytics}
 	
 	
 	\author{Anand Sriramulu}
@@ -36,34 +45,38 @@
 	
 	Docker is a newer type of container technology and an open source platform for developers and sysadmins to build, ship, and run applications.
 	
-	Docker has the same concept as a container used for cargo ships: a standard container that is loaded with virtually any goods, and stays sealed until it reaches final delivery. In between, containers can be loaded and unloaded, stacked, transported efficiently over long distances, and transferred from one mode of transport to another. \cite{About_Docker}
+	Docker has the same concept as a container used for cargo ships: a standard container that is loaded with virtually any goods, and stays sealed until it reaches final delivery. In between, containers can be loaded and unloaded, stacked, transported efficiently over long distances, and transferred from one mode of transport to another. \cite{AboutDocker}
 	
 	Docker enables any payload to be encapsulated as a lightweight, portable, self-sufficient container that can be manipulated using standard operations and run consistently on different systems.
 	
 	Docker containers are isolated, but share the Linux OS kernel, and where appropriate, bins/libraries. This results in significantly faster deployment, much less overhead, easier migration and faster performance. You share the host OS services, so unlike a Virtual Machine, you're not replicating the OS
 	
 	\section{Docker Benefits}
-	In a seemingly constant state of maturation, the benefits of using Docker increase on a regular basis. Here, I'll outline the top five benefits of using the ever-growing platform. \cite{Docker_Benefits}
+	In a seemingly constant state of maturation, the benefits of using Docker increase on a regular basis. Here, I'll outline the top five benefits of using the ever-growing platform. \cite{DockerBenefits}
 	\subsection{Continuous Deployment and Testing}
-	Docker is gaining a lot of traction in the development and devops world for its consistency across environments. There are always minor differences between environments in development and release lifecycles, unless you have your own private repository environment with tight checks in place. These differences may be because of different package versions or dependencies. Nevertheless, Docker can address that gap by ensuring consistent environments from development to production. Docker containers are configured to maintain all configurations and dependencies internally. As a result, you can use the same container from development to production making sure there are no discrepancies or manual intervention.
+	Continuous deployment is a DevOps process in which the applications or features from continuous integration and deployed to production environment.
+	Docker helps both development and devops and make sure it's consistency across environments. Docker containers are configured to maintain all configurations and dependencies internally, so the same container developed and tested in the development environment can be used in production without any manual intervention.
 	
-	With Docker containers, you can also ensure that developers don't need an identical production environment set up. Instead, they can use their own system to run Docker containers on VirtualBox. If you need to perform an upgrade during a product's release cycle, you can easily make the necessary changes to Docker containers, test them, and implement the same changes to your existing containers. This sort of flexibility is a key advantage of using Docker. Just like standard deployment and integration processes, Docker allows you to build, test and release images that can be deployed across multiple servers. Even if a new security patch is available, the process remains the same. You can apply the patch, test it and release it to production.
+	The developer need not worry about the environment as he can develop or test any product upgrades, maintenance releases, new features in a docker container and release the images to different production servers. This is a great advantage as it saves lot of time with no errors due to the deployment issues.\cite{Isolation}
+	 
 	\subsection{Multi-Cloud Platforms}
-	One of Docker's greatest benefits is portability. Over last few years, all major cloud computing providers, including Amazon Web Services (AWS) and Google Compute Platform (GCP), have embraced Docker's availability and added individual support. Docker containers can be run inside an Amazon EC2 instance, Google Compute Engine instance, Rackspace server or VirtualBox, provided that the host OS supports Docker. If this is the case, a container running on an Amazon EC2 instance can easily be ported between environments, say to VirtualBox, achieving similar consistency and functionality. This grants you a level of abstraction from your infrastructure layer. In addition to AWS and GCP, Docker works very well with various other IaaS providers like Microsoft Azure, and OpenStack. \cite{Multi_Cloud_Platform}
+	Docker being widely used container solution, all the cloud computing provides supports it, so the portability being greatest strength with docker.
+	That means, the docker image running on AWS can be switched Azure in which the docker solution is free from Platform As a Service vendor lock and provides the level of abstraction from the infrastructure layer.
+	List of hosting provides supporting docker includes AWS, Microsoft Azure, Digital Ocean, Exoscale, Google Compute Engine, OpenStack, Rackspace, IBM Softlayer, etc.
+	\cite{MultiCloudPlatform}
 	\subsection{Environment Standardization and Version Control}
-	As discussed above, Docker containers ensure consistency across multiple development and release cycles, standardizing your environment. On top of that, Docker containers work  just like GIT repositories, allowing you to commit changes to your Docker images and version control them. Suppose you perform a component upgrade that breaks your whole environment. It is very easy to rollback to a previous version of your Docker image. This whole process can be tested in a few minutes. When compared to VM backup and image creation processes, Docker is fast, allowing you to quickly make replications and achieve redundancy. Additionally, launching Docker images is as fast as running a machine process.
+	Docker support version control as like GIT or TFS repositories. The docker images can be version controlled and if there any issues in the deployment, it can be roll-backed to the previous version. The process of rollback is quick and easy when compared to VM backup and image creation processes.\cite{Isolation}
 	\subsection{Isolation}
-	Docker ensures your applications and resources are isolated and segregated. Docker containers are as good as VM hypervisors when it comes to isolating resources, but there is still work to be done in terms of management and administration. \cite{Container_VM}
 	
-	Consider a scenario where you are running multiple applications on your VM. These applications can be team collaboration software (e.g., Confluence), issue tracking software (e.g., JIRA), centralized identity management systems (e.g., Crowd) and so on. Seeing as all of these applications run on different ports, you would have to leverage them on Apache and Nginx as a reverse proxy. So far, everything is in good shape, but as your environment moves forward, you will also need to configure a content management system (e.g., Alfresco) into your existing environment. Bear in mind that it requires a different version of Apache Tomcat, which will cause a problem. In order to fix this, you can either move your existing applications to another version of Tomcat or run your content management system (Alfresco) on your currently deployed version.
-	
-	Fortunately, with Docker, you don't have to do this. Docker makes sure each container has its own resources that are isolated from other containers. You can have various containers for separate applications running completely different stacks. Aside from this, effectively removing applications from your server is quite difficult and may cause conflicts with dependencies. However, Docker helps you ensure clean app removal since each application runs on its own container. If you no longer need an application, you can simply delete its container. It won't leave any temporary or configuration files on your host OS.
-	
-	On top of these benefits, Docker also ensures that each application only uses resources (CPU, memory and disk space) that have been assigned to them. A particular application won't hog all of your available resources, which would normally lead to performance degradation or complete downtime for other applications.
+	Since docker is a container, it's isolated from other containers and resources in the same host. Docker also make sure each container has it's own resource been allocated and isolated from the other containers. This gives the benefit on each container can run on its own application stack and be managed. So if an application is not needed, it can be removed by  deleting the container and it won't leave any temporary or container related files on the host system.
+	As mentioned earlier, each container has assigned with allocated resource, the docker make  sure it won't be exceeded and hence there will no issues related to the performance or down time of the other applications in the same host.\cite{Isolation}
 	\subsection{Security}
-	Docker is evolving at a fast pace, which Gartner even acknowledges, as mentioned above. From a security standpoint, Docker ensures that applications that are running on containers are completely segregated and isolated from each other, granting you complete control over traffic flow and management. No Docker container can look into processes running inside another container. From an architectural standpoint, each container gets its own set of resources ranging from processing to network stacks.\cite{Docker_Security}
 	
-	As a means of tightening security, Docker uses host OS sensitive mount points (e.g., '/proc' and '/sys') as read-only mount points and uses a copy-on-write filesystem to make sure containers can't read each other's data. It also limits system calls to your host OS and works well with SELinux and AppArmor. Additionally, Docker images that are available on Docker Hub are digitally signed to ensure authenticity. Since Docker containers are isolated and resources are limited, even if one of your applications is hacked, it won't affect applications that are running on other Docker containers.
+	As the containers are isolated, Docker make sure that the applications that are running on containers have control only within their container. So no container can look into the processes of other container. Each container will have its own resources ranging from processing to network stacks which is great benefit as if there any impact to an application related to security it won't impact the other applications.
+	
+	\cite{DockerSecurity}
+	
+	
 	\section{Bigdata and Docker}
 	
 	Big Data is one of the big trends in IT of recent years. The vast majority of CIOs are collecting and managing more business information than they did two years ago.
@@ -108,12 +121,12 @@
 	\begin{itemize}
 		\item[]\noindent backend:
 		\item[] - storage 
-		\item[] personality: "hadoop"
+		\item[] personality: 'hadoop'
 		\item[] instances: 2
 		\item[] layers:
-		\item[] - "hive"
+		\item[] - 'hive'
 		\item[]\noindent Connectors: 
-		\item[] - personality: "hadoop-client"
+		\item[] - personality: 'hadoop-client'
 	\end{itemize}	
 	
 	Get started by typing
@@ -148,6 +161,12 @@
 	Several other tools exist for the orchestration of containerized applications, such as Kubernetes and Docker Swarm. For complex platforms, these tools can be used to deploy containers across hardware clusters and to integrate networking and storage resources between containers. However, these applications work strictly at the container level and do not inherently provide application-level workflows as presented here. Additional implementation experience about the use of these tools within high-performance clusters may provide valuable insights about the scalability of these tools within data analytics workflows.
 	
 	Because of the subsequent increase in analysis throughput, use of these tools means that big data analyses can be done even with limited local computational capacity. Finally, use of container technology can improve pipeline and experimental reproducibility since preconfigured applications can be readily deployed to nearly any host system. While many factors can impact reproducibility, the use of containers limits variability due to differences in software environment or application configuration when appropriately deployed. The continued use of emerging technology and novel approaches to software architecture has the potential to increase the efficiency of computational analysis in big data.
+
+\begin{acks}		
+	
+	The author would like to thank Dr. Gregor von Laszewski and the Teaching Assistants for their support and valuable suggestions.
+	
+\end{acks}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{report} 
