@@ -19,6 +19,7 @@ paper2:
     abstract: Comparing Kubernetes and Docker Swarm Orchestrations, Discuss on the advantages of the Singularity Containers over the others
     author:
         - Anand Sriramulu
+    chapter: Technology
     hid:
         - 338
     status: 100%
